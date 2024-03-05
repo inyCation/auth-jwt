@@ -12,7 +12,7 @@ router.get("/",(req,res)=>{
     })
 })
 router.post("/login", loginController);
-router.post("/register", checkLoggedIn, registerController);
+router.post("/register", registerController);
 router.get("/post", checkLoggedIn,getPostController)
 router.get("/verify",(req,res)=>{
 
