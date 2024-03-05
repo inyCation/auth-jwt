@@ -21,7 +21,7 @@ const Posts: React.FC = () => {
         return;
       }
       
-      const { data } = await axios.get("http://localhost:7687/user/post", {
+      const { data } = await axios.get("http://auth-jwt-jxtm.vercel.app/user/post", {
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${authToken}`,

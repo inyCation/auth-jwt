@@ -17,7 +17,7 @@ const Register: React.FC = () => {
     try {
       
       const { data } = await axios.post(
-        "http://localhost:7687/user/register",
+        "http://auth-jwt-jxtm.vercel.app/user/register",
         { userName, email, password },
         {
           headers: {
