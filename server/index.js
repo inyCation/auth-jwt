@@ -1,0 +1,27 @@
+import express from "express";
+import { config } from "dotenv";
+import usersRoutes from "./routes/userRoutes.js";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+export const app = express();
+
+config({
+  path: "./configs/server.env",
+});
+
+app.use(express.json());
+app.use(cookieParser());
+
+app.use(express.urlencoded({
+  extended: true
+}));
+
+app.use(
+    cors({
+      origin: 'http://localhost:5173',
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+    })
+  );
+
+app.use("/user", usersRoutes);
