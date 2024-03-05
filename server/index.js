@@ -19,7 +19,7 @@ app.use(express.urlencoded({
 app.use(
     cors({
       origin: ['http://localhost:5173','https://auth-jwt-pi.vercel.app/'],
-      methods: ["GET", "POST", "PUT", "DELETE"],
+      methods:  ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD"],
       credentials: true,
     })
   );
