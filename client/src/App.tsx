@@ -5,7 +5,9 @@ const App :React.FC= () => {
   return (
     <div className='userLoginContainer' > 
       <Link to="/login">Login</Link>
+      <br />
       <Link to="/register">register</Link>
+      <br />
       <Link to="/post">post</Link>
     </div>
   )
