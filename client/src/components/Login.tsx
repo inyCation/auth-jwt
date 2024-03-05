@@ -10,7 +10,6 @@ const Login: React.FC = () => {
   
   const authToken = document.cookie.split('; ').find(row => row.startsWith('auth='))?.split('=')[1];
  
-
   useEffect(() => {
     if (authToken) {
       axios.get("https://auth-jwt-jxtm.vercel.app/user/verify", {
