@@ -6,7 +6,7 @@ import cors from "cors";
 export const app = express();
 
 config({
-  path: "./configs/server.env",
+  path: ".env",
 });
 
 app.use(express.json());
