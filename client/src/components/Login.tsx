@@ -13,7 +13,7 @@ const Login: React.FC = () => {
 
   useEffect(() => {
     if (authToken) {
-      axios.get("http://auth-jwt-jxtm.vercel.app/user/verify", {
+      axios.get("https://auth-jwt-jxtm.vercel.app/user/verify", {
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${authToken}`,
@@ -34,7 +34,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:7687/user/login",
+        "https://auth-jwt-jxtm.vercel.app/user/login",
         credentials,
         {
           headers: {
