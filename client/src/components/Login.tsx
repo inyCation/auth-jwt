@@ -1,18 +1,17 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
+import {END_POINT} from "./index"
 import { Link } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const [credentials, setCredentials] = useState({ userName: '', password: '' });
-
   const [loggedIn, setLoggedIn] = useState(false);
-  
   const authToken = document.cookie.split('; ').find(row => row.startsWith('auth='))?.split('=')[1];
- 
+
   useEffect(() => {
     if (authToken) {
-      axios.get("https://auth-jwt-jxtm.vercel.app/user/verify", {
+      axios.get(`${END_POINT}/user/verify`, {
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${authToken}`,
@@ -33,7 +32,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://auth-jwt-jxtm.vercel.app/user/login",
+        `${END_POINT}/user/login`,
         credentials,
         {
           headers: {

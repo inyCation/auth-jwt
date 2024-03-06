@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import {END_POINT} from "./index"
 
 
 const Posts: React.FC = () => {
   const [post, setPost] = useState<String>("");
 
-  
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ const Posts: React.FC = () => {
         return;
       }
       
-      const { data } = await axios.get("https://auth-jwt-jxtm.vercel.app/user/post", {
+      const { data } = await axios.get(`${END_POINT}/user/post`, {
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${authToken}`,

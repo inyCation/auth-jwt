@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { Link} from 'react-router-dom';
 import toast from 'react-hot-toast';
+import {END_POINT} from "./index"
 
 
 
@@ -10,14 +11,14 @@ const Register: React.FC = () => {
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  
+
 
   const registerHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       
       const { data } = await axios.post(
-        "https://auth-jwt-jxtm.vercel.app/user/register",
+        `${END_POINT}/user/register`,
         { userName, email, password },
         {
           headers: {
