@@ -83,7 +83,6 @@ export const registerController = async (req, res) => {
 };
 
 export const getPostController = async (req, res) => {
-   
     res.send({
         success:true,
         message: "Got Post Details"

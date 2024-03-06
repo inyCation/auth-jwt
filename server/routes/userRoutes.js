@@ -1,8 +1,6 @@
 import express from "express"
 import {loginController,registerController,getPostController} from "../controllers/user.js"
-
 import { checkLoggedIn } from "../middlewares/check-loggedin.js";
-
 
 const router = express.Router();
 
